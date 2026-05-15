@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+a = np.array([1, 2, 3, 4, 6,7,8,9,10])
+# print(a[0])
+# print(a.dtype)
+# b=np.zeros(2)
+# print(b)
+# c=np.arange(2,3)
+# print(c)
+# a1=np.array([[1,2],[3,4]])
+# a2=np.array([[5,6],[7,8]])
+
+# print(np.vstack((a1,a2)))
+# print(np.hstack((a1,a2)))
+# plt.plot(a)
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+X = np.arange(-5, 5, 0.15)
+Y = np.arange(-5, 5, 0.15)
+X, Y = np.meshgrid(X, Y)
+R = np.sqrt(X**2 + Y**2)
+Z = np.sin(R)
+
+ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis')
+plt.show()
